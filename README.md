@@ -25,7 +25,7 @@ A React application that uses DeepFilterNet3 for real-time audio noise suppressi
 
 ```bash
 git clone https://github.com/ThanhTronggg/Deepfilternet3-Livekit.git
-cd Deepfilternet3-Livekit/Deepfilternet3-Livekit
+cd Deepfilternet3-Livekit
 npm install
 ```
 
@@ -105,16 +105,14 @@ The application will open at `http://localhost:3000`
 
 ```
 Deepfilternet3-Livekit/
-├── Deepfilternet3-Livekit/
-│   ├── src/
-│   │   ├── App.js              # Main component
-│   │   ├── server.js           # LiveKit token server
-│   │   └── ...
-│   ├── .env                    # Configuration (create from env.example)
-│   ├── env.example            # Configuration template
-│   ├── package.json           # Dependencies and scripts
-│   └── README.md              # This guide
-└── ...
+├── src/
+│   ├── App.js              # Main component
+│   ├── server.js           # LiveKit token server
+│   └── ...
+├── .env                    # Configuration (create from env.example)
+├── env.example            # Configuration template
+├── package.json           # Dependencies and scripts
+└── README.md              # This guide
 ```
 
 ## Available Scripts

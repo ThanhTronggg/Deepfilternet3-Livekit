@@ -2,7 +2,7 @@
 
 A React application that uses DeepFilterNet3 for real-time audio noise suppression in LiveKit meetings.
 
-**Repository**: [Deepfilternet3-Livekit](https://github.com/yourusername/Deepfilternet3-Livekit)
+**Repository**: [Deepfilternet3-Livekit](https://github.com/ThanhTronggg/Deepfilternet3-Livekit)
 
 ## Features
 
@@ -24,7 +24,7 @@ A React application that uses DeepFilterNet3 for real-time audio noise suppressi
 ### 1. Clone and install dependencies
 
 ```bash
-git clone https://github.com/yourusername/Deepfilternet3-Livekit.git
+git clone https://github.com/ThanhTronggg/Deepfilternet3-Livekit.git
 cd Deepfilternet3-Livekit/Client_react
 npm install
 ```

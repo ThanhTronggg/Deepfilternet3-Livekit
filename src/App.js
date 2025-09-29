@@ -7,7 +7,7 @@ export default function App() {
   const [status, setStatus] = useState("idle");
   const [level, setLevel] = useState(50);
   const [roomConnected, setRoomConnected] = useState(false);
-  const [wsUrl, setWsUrl] = useState("wss://mmmmmmmmmmmm-dwd0hrri.livekit.cloud");
+  const [wsUrl, setWsUrl] = useState(process.env.REACT_APP_LIVEKIT_WS_URL || "wss://mmmmmmmmmmmm-dwd0hrri.livekit.cloud");
   const [participants, setParticipants] = useState([]);
   const [myParticipantName, setMyParticipantName] = useState("");
   const [micEnabled, setMicEnabled] = useState(true);
@@ -355,21 +355,6 @@ export default function App() {
         </div>
       )}
 
-      {/* Instructions */}
-      <div style={{ marginTop: 30, padding: 15, backgroundColor: "#f5f5f5", borderRadius: 8 }}>
-        <h3>Hướng dẫn sử dụng:</h3>
-        <ul>
-          <li><strong>LiveKit Mode:</strong> Kết nối với phòng họp LiveKit với khử nhiễu tự động</li>
-          <li>Điều chỉnh mức độ khử nhiễu từ 0% (không khử) đến 100% (khử tối đa)</li>
-          <li>Bạn sẽ tự động nghe âm thanh từ những người khác trong phòng</li>
-          <li>Danh sách người tham gia sẽ hiển thị ai đang nói và mức độ âm thanh</li>
-          <li><strong>Mở nhiều tab:</strong> Mỗi tab sẽ có participant name khác nhau và có thể nghe lẫn nhau</li>
-          <li><strong>Nút Microphone:</strong> Có thể bật/tắt microphone riêng cho từng tab</li>
-          <li><strong>Test âm thanh:</strong> Bật mic ở tab này, nói vào mic, tab khác sẽ nghe được</li>
-          <li>Đảm bảo trình duyệt hỗ trợ Web Audio API và AudioWorklet</li>
-          <li>Đảm bảo microphone và loa của bạn hoạt động bình thường</li>
-        </ul>
-      </div>
     </div>
   );
 }

@@ -1,18 +1,22 @@
 import express from "express";
 import { AccessToken } from "livekit-server-sdk";
 import cors from "cors";
+import dotenv from "dotenv";
+
+// Load environment variables
+dotenv.config();
 
 const app = express();
 app.use(cors({
-    origin: "http://localhost:3000"
+    origin: process.env.SERVER_CORS_ORIGIN || "http://localhost:3000"
   }));
   
 
-const apiKey = "API2ttpiieJCtZ3";
-const apiSecret = "tcMOrvDmbsJfm1ynwiaOPmIXebIeNvfK72IX82d0LV8D";
+const apiKey = process.env.REACT_APP_LIVEKIT_API_KEY;
+const apiSecret = process.env.REACT_APP_LIVEKIT_API_SECRET;
 
 app.get("/getToken", async (req, res) => {
-  const roomName = "key for client"; // tên room
+  const roomName = process.env.REACT_APP_LIVEKIT_ROOM_NAME || "key for client"; // tên room
   // Tạo unique identity với timestamp và random number
   const timestamp = Date.now();
   const randomNum = Math.floor(Math.random() * 10000);
@@ -41,6 +45,6 @@ app.get("/getToken", async (req, res) => {
   });
 });
 
-app.listen(3001, () => {
-  console.log("Token server running on http://localhost:3001");
+app.listen(process.env.SERVER_PORT || 3001, () => {
+  console.log(`Token server running on http://localhost:${process.env.SERVER_PORT || 3001}`);
 });
